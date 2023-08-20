@@ -1,5 +1,9 @@
+import {State} from "../enums/state";
+
 export class Car {
-    licensePlate: string;
+    readonly licensePlate: string;
+    
+    state: State;
 
     constructor(licensePlate: string) {
         this.licensePlate = licensePlate;
