@@ -1,4 +1,4 @@
-import {Car} from "../models/car";
+import {Car} from "./models/car";
 
 let car: Car = new Car("B464KM797");
 

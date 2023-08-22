@@ -1,10 +1,10 @@
 {
-  "name": "carapi",
+  "name": "carstatus",
   "version": "1.0.0",
   "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "ts-node --esm ./src/app/main.ts",
+    "run": "ts-node --esm ./src/main.ts",
     "build:commonjs": "rimraf lib && tsc --target es5 --outDir lib --module commonjs --declaration",
     "build:es": "rimraf es && tsc --target es6 --outDir es --module es6",
     "build": "npm run build:commonjs && npm run build:es",
