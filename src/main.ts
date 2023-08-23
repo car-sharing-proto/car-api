@@ -1,8 +1,11 @@
 import {Car} from "./models/car";
+import { CarID } from "./models/car_id";
 
-let car: Car = new Car("B464KM797");
+let id: CarID = 0;
+let car: Car = new Car(id, "B464KM797");
 
 console.log(car.licensePlate);
+console.log(car.id);
 
 export default {
     car : Car,
