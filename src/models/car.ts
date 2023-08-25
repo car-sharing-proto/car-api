@@ -1,7 +1,7 @@
-import {AccessState} from "../enums/access_state";
-import {LockState} from "../enums/lock_state";
-import {RentState} from "../enums/rent_state";
-import {CarID} from "../models/car_id";
+import {AccessState} from "./enums/accessState";
+import {LockState} from "./enums/lockState";
+import {RentState} from "./enums/rentState";
+import {CarID} from "./carId";
 
 export class Car {
     readonly id: CarID;
