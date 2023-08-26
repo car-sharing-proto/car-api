@@ -1,5 +1,5 @@
-import {Car} from "./models/car";
-import { CarID } from "./models/carId";
+import {Car} from "./domain/car";
+import { CarID } from "./domain/carId";
 
 let id: CarID = 0;
 let car: Car = new Car(id, "B464KM797");

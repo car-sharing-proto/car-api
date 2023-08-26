@@ -1,9 +1,9 @@
-import { Car } from "../models/car";
-import { CarID } from "../models/carId";
-import { AccessState } from "../models/enums/accessState";
-import { LockState } from "../models/enums/lockState";
-import { RentState } from "../models/enums/rentState";
-import { ICarRepository } from "./interfaces/iCarRepository";
+import { Car } from "../domain/car";
+import { CarID } from "../domain/carId";
+import { AccessState } from "../domain/enums/accessState";
+import { LockState } from "../domain/enums/lockState";
+import { RentState } from "../domain/enums/rentState";
+import { ICarRepository } from "../domain/interfaces/iCarRepository";
 
 export class CarManager {
     private carRepository: ICarRepository;
@@ -12,32 +12,23 @@ export class CarManager {
         this.carRepository = carRepository;
     }
 
-    private getCar(carID: CarID): Car | null {
-        let car = this.carRepository.getCar(carID);
+    private getCar(carID: CarID): Car {
+        let car = this.carRepository.getCarByID(carID);
         return car;
     }
 
     public setAccesStatus(carID: CarID, accesState: AccessState) {
         let car = this.getCar(carID);
-
-        if (car) {
-            car.accesState = accesState;
-        }
+        car.accesState = accesState;
     }
 
     public setRentStatus(carID: CarID, rentState: RentState) {
-        let car = this.carRepository.getCar(carID);
-
-        if(car){
-            car.rentState = rentState;
-        }
+        let car = this.carRepository.getCarByID(carID);
+        car.rentState = rentState;
     }
 
     public setLockStatus(carID: CarID, lockState: LockState) {
-        let car = this.carRepository.getCar(carID);
-
-        if(car){
-            car.lockState = lockState;
-        }
+        let car = this.carRepository.getCarByID(carID);
+        car.lockState = lockState;
     }
 }

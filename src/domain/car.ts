@@ -13,5 +13,6 @@ export class Car {
 
     constructor(id:CarID, licensePlate: string) {
         this.licensePlate = licensePlate;
+        this.id = id;
     }
 } 
