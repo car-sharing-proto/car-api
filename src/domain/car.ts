@@ -1,18 +1,22 @@
-import {AccessState} from "./enums/accessState";
-import {LockState} from "./enums/lockState";
-import {RentState} from "./enums/rentState";
-import {CarID} from "./carId";
+import { AccessState } from "./enums/accessState";
+import { LockState } from "./enums/lockState";
+import { RentState } from "./enums/rentState";
+import { CarID } from "./carId";
 
 export class Car {
     readonly id: CarID;
     readonly licensePlate: string;
-    
+
     accesState: AccessState;
     lockState: LockState;
     rentState: RentState;
 
-    constructor(id:CarID, licensePlate: string) {
+    constructor(id: CarID, licensePlate: string) {
         this.licensePlate = licensePlate;
         this.id = id;
+
+        this.accesState = AccessState.Service;
+        this.lockState = LockState.Locked;
+        this.rentState = RentState.Free;
     }
 } 
